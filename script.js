@@ -1,10 +1,7 @@
 let urlStr = window.location.search;
-console.log(urlStr);
 const paramName = 'username';
 let userName =  urlStr.substr(urlStr.indexOf(paramName, 0) + paramName.length + 1);
-console.log(userName);
 let urlGit = 'https://api.github.com/users/' + userName;
-console.log(urlStr);
 
 fetch(urlGit)
 	.then(res => res.json())
