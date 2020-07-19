@@ -14,7 +14,9 @@ fetch(urlGit)
     if (res.status == 404) {
 	  let div = document.createElement('div');
 	  div.innerHTML = 'Информация о пользователе ' + userName + ' не доступна';
-	  document.body.appendChild(div)
+	  document.body.appendChild(div);
+
+	  throw `${res.status} ${res.statusText}`
   	}
   	else { 
   	  return (res.json())	
